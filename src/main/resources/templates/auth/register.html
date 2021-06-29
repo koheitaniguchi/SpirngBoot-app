@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マスタージム24</title>
+
+</head>
+
+<body>
+    <h2>ユーザー登録</h2>
+
+    <form th:action="@{/register}" th:method="post" th:object="${user}" novalidate>
+        <div>
+            <label for="name">氏名：</label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label for="gender">性別：</label>
+            <select name="gender">
+                <option value="1">選択しない</option>
+                <option value="2">男性</option>
+                <option value="3">女性</option>
+                <option value="4">その他</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="birth">生年月日：</label>
+            <input type="date" th:field="*{birth}">
+        </div>
+        <div>
+            <label for="address">住所：</label>
+            <input type="text" th:field="*{address}">
+        </div>
+        <div>
+            <label for="email">E-mail：</label>
+            <input type="email" th:field="*{email}">
+        </div>
+        <div>
+            <label for="username">ユーザー名：</label>
+            <input type="text" th:field="*{username}">
+        </div>
+        <div>
+            <label for="username">パスワード：</label>
+            <input type="password" th:field="*{password}">
+        </div>
+        <div>
+            <label for="admin">管理者：</label>
+            <input type="checkbox" th:field="*{admin}">
+        </div>
+        <button>登録</button>
+    </form>
+</body>
+
+</html>
