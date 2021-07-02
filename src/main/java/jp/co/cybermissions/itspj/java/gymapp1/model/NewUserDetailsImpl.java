@@ -1,5 +1,6 @@
 package jp.co.cybermissions.itspj.java.gymapp1.model;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -31,4 +32,22 @@ public class NewUserDetailsImpl extends User {
     public String getEmail() {
         return user.getEmail();
     }
+
+    public String getUserName() {
+        return user.getUsername();
+    }
+
+    public LocalDate getBirth() {
+        return user.getBirth();
+    }
+
+    public String getAddress() {
+        return user.getAddress();
+    }
+
+    public String getName() {
+        return user.getName();
+    }
+
+
 }

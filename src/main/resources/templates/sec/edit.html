@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master GYM</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div>
+        <form th:method="patch" th:action="@{/sec/{id}(id=*{id})}" th:object="${inquiryUser}" novalidate>
+            <div>
+                <label for="id">ID:</label>
+                <input type="text" th:field="*{id}" disabled>
+            </div>
+            <div>
+                <label for="inquiry">Question:</label>
+                <input type="text" th:field="*{inquiry}">
+            </div>
+            <div>
+                <label for="comments">Answer:</label><br>
+                <textarea name="form-control" rows="5" th:field="*{comments}"></textarea><br>
+            </div>
+            <div>
+                <input type="submit" value="answer">
+            </div>
+            <button>
+                <a th:href="@{/sec/question}">back</a>
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

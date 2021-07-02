@@ -54,6 +54,4 @@ public class NewUser {
     private int gender;
     private boolean active = true;
 
-    @NotBlank
-    private String content;
 }

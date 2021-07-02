@@ -46,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
         .logoutSuccessUrl("/");
 
+
         http.csrf().disable();
         http.headers().frameOptions().disable();
     }
@@ -55,6 +56,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService)
             .passwordEncoder(passwordEncoder());
     }
-
-    
 }

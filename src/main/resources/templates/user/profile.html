@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会員専用ページ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="profile" class="big-bg">
+        <header class="page-header wrapper">
+            <h1><a th:href="@{/sec}">Master GYM</a></h1>
+            <nav>
+                <ul class="main-nav">
+                    <li><a th:href="@{/sec/news}">News</a></li>
+                    <li><a th:href="@{/logout}">Logout</a></li>
+                    <li><a th:href="@{/sec/question}">Question</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="home-content wrapper">
+            <h1 class="page-title">会員情報</h1>
+            <table>
+                <ul>
+                    <li sec:authentication="principal.userId"></li>
+                    <li sec:authentication="principal.username"></li>
+                    <li sec:authentication="principal.email"></li>
+                    <li sec:authentication="principal.name"></li>
+                    <li sec:authentication="principal.address"></li>
+                    <li sec:authentication="principal.birth"></li>
+                </ul>
+                <tr>
+                    <td>
+                        <button>
+                            <a th:href="@{/user/{id}(id=${user})}" class="btn btn-outline-warning">
+                                <i class="fas fa-inquiryUser-edit"></i>へんこう</a>
+                        </button>
+                    </td>
+                    <td>
+                        <form th:method="delete" th:action="@{/user/{id}(id=${user})}">
+                            <button type="submit" class="btn btn-outline-danger">
+                                <i class="fas fa-inquiryUser-edit"></i>たいかい</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <a class="button" th:href="@{/logout}">logout</a>
+        </div>
+</body>
+
+</html>

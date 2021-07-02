@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>マスタージム24</title>
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-  <div id="news" class="big-bg">
+  <div id="home" class="big-bg">
     <header class="page-header wrapper">
         <h1><a th:href="@{/sec}">Master GYM</a></h1>
         <nav>
             <ul class="main-nav">
-                <li><a th:href="@{/news}">News</a></li>
+                <li><a th:href="@{/sec/news}">News</a></li>
                 <li><a th:href="@{/logout}">Logout</a></li>
                 <li><a th:href="@{/sec/question}">Question</a></li>
             </ul>

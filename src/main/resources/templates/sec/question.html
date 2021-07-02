@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A</title>
+    <title>Master GYM</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1><a th:href="@{/sec}">Master GYM</a></h1>
-    質問スペース
+    <div id="question">
+        <header class="page-header wrapper">
+            <h1><a th:href="@{/sec}">Master GYM</a></h1>
+        </header>
+        <h1>Q&A</h1>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Answer</th>
+            </thead>
+            <tbody>
+                <tr th:each="inquiryUser : ${questionlist}" th:object="${inquiryUser}">
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{inquiry}"></td>
+                    <td th:text="*{comments}"></td>
+                    <td sec:authorize="hasRole('ADMIN')">
+                        <button>
+                            <a th:href="@{/sec/{id}(id=*{id})}" class="btn btn-outline-warning">
+                                <i class="fas fa-inquiryUser-edit"></i>answer</a>
+                        </button>
+                    </td>
+                    <td>
+                        <form th:method="delete" th:action="@{/sec/{id}(id=*{id})}">
+                            <button type="submit" class="btn btn-outline-danger">
+                                <i class="fas fa-inquiryUser-edit"></i>delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <button>
+            <a th:href="@{/sec/new}" class="btn btn-outline-success">new question</a>
+        </button><br>
+        <a class="button" th:href="@{/logout}">logout</a>
+    </div>
 </body>
+
 </html>
