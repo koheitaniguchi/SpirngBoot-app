@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: black;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+}
+
+/* 見出し */
+.page-title {
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.sub-title {
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+}
+
+/* ボタン */
+button {
+    font-size: 1.375rem;
+    background: black;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 24px;
+}
+button:hover {
+    background: grey;
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+}
+
+/* HEADER
+------------------------------- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    text-transform: uppercase;
+}
+.page-header a {
+    color: black;
+}
+.page-header a:hover {
+    color: gray;
+}
+.main-nav {
+    display: flex;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+div {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family:"Yu Mincho", "YuMincho", serif ;
+}
+form {
+    text-align: center;
+    font-size: 2.0rem;
+    font-family:"Yu Mincho", "YuMincho", serif ;
+}
+h2 {
+    text-align: center;
+    font-size: 3.0rem;
+    font-family:"Yu Mincho", "YuMincho", serif ;
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: gray;
+}

@@ -49,5 +49,8 @@ public class NewUserDetailsImpl extends User {
         return user.getName();
     }
 
+    public int getGender() {
+        return user.getGender();
+    }
 
 }

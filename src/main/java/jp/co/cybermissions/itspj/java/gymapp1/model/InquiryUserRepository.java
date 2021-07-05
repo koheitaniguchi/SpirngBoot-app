@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface InquiryUserRepository extends JpaRepository<InquiryUser , Long>{
     List<InquiryUser> findByCommentsIsNull();
+    List<InquiryUser> findByIdAndCommentsIsNotNull(Long id);
+    List<InquiryUser> findByNewuser(NewUser user);
 }

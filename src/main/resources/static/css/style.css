@@ -54,11 +54,6 @@ img {
     background: grey;
 }
 
-/* iframe */
-iframe {
-    width: 100%;
-}
-
 /* HEADER
 ------------------------------- */
 .page-header {
@@ -99,6 +94,8 @@ iframe {
 #home {
     background-image: url(../images/jogging-2343558_960_720.webp);
     min-height: 100vh;
+    background-size: cover;
+    width: 100%;
 }
 #home .page-title {
     text-transform: none;
@@ -185,7 +182,7 @@ footer p {
 }
 
 h1 {
-    color: white;
+    color: black;
 }
 
 /* 未回答があるときの設定 */

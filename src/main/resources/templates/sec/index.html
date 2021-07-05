@@ -17,7 +17,14 @@
                 <ul class="main-nav">
                     <li><a th:href="@{/sec/news}">News</a></li>
                     <li><a th:href="@{/user/profile}">Profile</a></li>
-                    <li><a th:href="@{/sec/question}" th:class="${#authorization.expression('hasRole(''ADMIN'')') && list}? notice">Question</a></li>
+                    <li>
+                        <th:block sec:authorize="hasRole('ADMIN')">
+                            <a th:href="@{/sec/question}" th:class="${list}? notice">Question</a>
+                        </th:block>
+                        <th:block th:unless="${#authorization.expression('hasRole(''ADMIN'')')}">
+                            <a th:href="@{/sec/question}" th:class="${user_question_notice}? notice">Question</a>
+                        </th:block>
+                    </li>
                     <li><a th:href="@{/logout}">Logout</a></li>
                 </ul>
             </nav>

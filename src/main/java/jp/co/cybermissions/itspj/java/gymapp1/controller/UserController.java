@@ -26,7 +26,8 @@ public class UserController {
 
     @GetMapping("/profile")
     public String profile(@AuthenticationPrincipal NewUserDetailsImpl userDetailsImpl, Model model) {
-        model.addAttribute("user", userDetailsImpl.getUserId());
+        // model.addAttribute("user",userDetailsImpl.getUserId());
+        model.addAttribute("user", rep.findById(userDetailsImpl.getUserId()).get());
         return "user/profile";
     }
 

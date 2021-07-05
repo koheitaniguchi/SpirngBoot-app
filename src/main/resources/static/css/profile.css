@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: black;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+}
+
+/* 見出し */
+.page-title {
+    font-size: 3rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+/* ボタン */
+.button {
+    font-size: 1.375rem;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 24px;
+    text-align: center;
+}
+.button:hover {
+    background: grey;
+}
+
+/* HEADER
+------------------------------- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    text-transform: uppercase;
+}
+.page-header a {
+    color: white;
+}
+.page-header a:hover {
+    color: gray;
+}
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+.main-nav {
+    display: flex;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: black;
+}
+.main-nav a:hover {
+    color: grey;
+}
+
+/* HOME
+------------------------------- */
+#home {
+    background-image: url(../images/jogging-2343558_960_720.webp);
+    min-height: 100vh;
+    background-size: cover;
+    width: 100%;
+}
+#home .page-title {
+    text-transform: none;
+}
+.home-content {
+    text-align: center;
+    margin-top: 10%;
+}
+.home-content p {
+    font-size: 2.5rem;
+    margin: 10px 0 42px;
+}
+/* フッター
+------------------------------- */
+footer {
+    background: black;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+h1 {
+    color: black;
+}

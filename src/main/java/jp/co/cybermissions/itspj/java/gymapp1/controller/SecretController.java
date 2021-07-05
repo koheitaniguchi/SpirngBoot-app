@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.cybermissions.itspj.java.gymapp1.model.InquiryUser;
 import jp.co.cybermissions.itspj.java.gymapp1.model.InquiryUserRepository;
-// import jp.co.cybermissions.itspj.java.gymapp1.model.NewUser;
+import jp.co.cybermissions.itspj.java.gymapp1.model.NewUser;
 import jp.co.cybermissions.itspj.java.gymapp1.model.NewUserDetailsImpl;
-// import jp.co.cybermissions.itspj.java.gymapp1.model.NewUserRepository;
+import jp.co.cybermissions.itspj.java.gymapp1.model.NewUserRepository;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/sec")
 public class SecretController {
 
-    // private final NewUserRepository rep;
+    private final NewUserRepository uRep;
     private final InquiryUserRepository iRep;
 
     @GetMapping("")
@@ -36,19 +36,30 @@ public class SecretController {
         System.out.println("email:" + userDetails.getEmail());
         System.out.println("address:" + userDetails.getAddress());
         System.out.println("name:" + userDetails.getName());
+        System.out.println("gender:" + userDetails.getGender());
         model.addAttribute("list", !iRep.findByCommentsIsNull().isEmpty());
+        //↓
+        model.addAttribute("user_question_notice", hasReply(userDetails.getUserId()));
+        //↑
         return "sec/index";
+    }
+
+    //ユーザの質問にコメントが返信されているかどうかを取得する
+    private boolean hasReply(long userId) {
+        NewUser user = uRep.findById(userId).get();
+        for (InquiryUser iu : iRep.findByNewuser(user)) {
+            String comments = iu.getComments();
+            if (comments !=null) {
+                return true;//1件でも返信があればtrueとする
+            }
+        }
+        return false;//該当データがなければfalse
     }
 
     @GetMapping("/news")
     public String news() {
         return "sec/news";
     }
-
-    // @GetMapping("/profile")
-    // public String profile() {
-    //     return "sec/profile";
-    // }
 
     // 質問リスト
     @GetMapping("/question")
@@ -65,10 +76,14 @@ public class SecretController {
 
     // 質問データ保存
     @PostMapping("/new")
-    private String create(@Validated @ModelAttribute InquiryUser inquiryuser, BindingResult result) {
+    private String create(@AuthenticationPrincipal NewUserDetailsImpl userDetails,@Validated @ModelAttribute InquiryUser inquiryuser, BindingResult result) {
         if (result.hasErrors()) {
             return "sec/new";
         }
+        //newuser取得
+        NewUser user = uRep.findById(userDetails.getUserId()).get();
+        //newuserセット
+        inquiryuser.setNewuser(user);
         iRep.save(inquiryuser);
         return "redirect:/sec/question";
     }

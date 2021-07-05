@@ -6,27 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master GYM</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/css/question.css}">
 </head>
 
 <body>
-    <div id="question">
+    <div id="home" class="big-bg">
         <header class="page-header wrapper">
             <h1><a th:href="@{/sec}">Master GYM</a></h1>
         </header>
-        <h1>Q&A</h1>
-        <table>
-            <thead>
+        <h2>Q&A</h2>
+        <table class="question">
+            <thead class="content">
                 <th>ID</th>
                 <th>Question</th>
                 <th>Answer</th>
             </thead>
-            <tbody>
+            <tbody class="list">
                 <tr th:each="inquiryUser : ${questionlist}" th:object="${inquiryUser}">
                     <td th:text="*{id}"></td>
                     <td th:text="*{inquiry}"></td>
                     <td th:text="*{comments}"></td>
-                    <td sec:authorize="hasRole('ADMIN')">
+                    <td class="" sec:authorize="hasRole('ADMIN')">
                         <button>
                             <a th:href="@{/sec/{id}(id=*{id})}" class="btn btn-outline-warning">
                                 <i class="fas fa-inquiryUser-edit"></i>answer</a>
@@ -40,12 +40,14 @@
                     </td>
                 </tr>
             </tbody>
-
         </table>
-        <button>
-            <a th:href="@{/sec/new}" class="btn btn-outline-success">new question</a>
-        </button><br>
-        <a class="button" th:href="@{/logout}">logout</a>
+        <div class="new">
+            
+        </div>
+        <div class="home-content wrapper">
+            <a th:href="@{/sec/new}" class="button">new question</a>
+            <a class="button" th:href="@{/logout}">logout</a>
+        </div>
     </div>
 </body>
 
