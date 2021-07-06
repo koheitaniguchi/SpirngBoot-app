@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* 共通部分
 ------------------------------- */
 html {
@@ -21,16 +20,14 @@ img {
     margin: 0 auto;
     padding: 0 4%;
 }
-
 /* 大きな背景画像 */
 .big-bg {
     background-size: cover;
     background-position: center top;
 }
-
 /* 見出し */
 .page-title {
-    font-size: 3rem;
+    font-size: 5rem;
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
     font-weight: normal;
@@ -38,8 +35,8 @@ img {
 /* ボタン */
 .button {
     font-size: 1.375rem;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
     border-radius: 5px;
     padding: 10px 24px;
     text-align: center;
@@ -47,7 +44,6 @@ img {
 .button:hover {
     background: grey;
 }
-
 /* HEADER
 ------------------------------- */
 .page-header {
@@ -68,7 +64,7 @@ img {
 }
 .main-nav {
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-transform: uppercase;
     margin-top: 34px;
     list-style: none;
@@ -82,7 +78,6 @@ img {
 .main-nav a:hover {
     color: grey;
 }
-
 /* HOME
 ------------------------------- */
 #home {
@@ -96,24 +91,24 @@ img {
 }
 .home-content {
     text-align: center;
-    margin-top: 10%;
 }
 .home-content p {
     font-size: 2.5rem;
     margin: 10px 0 42px;
 }
-/* フッター
-------------------------------- */
-footer {
-    background: black;
-    text-align: center;
-    padding: 26px 0;
-}
-footer p {
-    color: #fff;
-    font-size: 0.875rem;
-}
-
 h1 {
+    color: white;
+}
+.profile {
+    font-size: 1.2rem;
+    margin: 2em auto;
+    padding: 1em;
+    width: 100%;
+    color:black;
+    background-color: #FAF0E6;
+    border: 2px solid #DEB887;
+    border-radius: 10px;
+}
+a {
     color: black;
 }

@@ -21,13 +21,11 @@ img {
     margin: 0 auto;
     padding: 0 4%;
 }
-
 /* 大きな背景画像 */
 .big-bg {
     background-size: cover;
     background-position: center top;
 }
-
 /* 見出し */
 .page-title {
     font-size: 5rem;
@@ -41,7 +39,6 @@ img {
     border-bottom: 2px #0bd solid;
     font-weight: normal;
 }
-
 /* ボタン */
 button {
     font-size: 1.375rem;
@@ -53,12 +50,10 @@ button {
 button:hover {
     background: grey;
 }
-
 /* iframe */
 iframe {
     width: 100%;
 }
-
 /* HEADER
 ------------------------------- */
 .page-header {
@@ -95,7 +90,6 @@ h2 {
     font-size: 3.0rem;
     font-family:"Yu Mincho", "YuMincho", serif ;
 }
-
 a {
     color: black;
 }

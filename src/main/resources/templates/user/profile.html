@@ -22,7 +22,7 @@
             </nav>
         </header>
         <div class="home-content wrapper">
-            <h1 class="page-title">会員情報</h1>
+            <h1 class="page-title">Member information</h1>
             <table class="profile">
                 <thead>
                     <th>UserID</th>
@@ -42,20 +42,21 @@
                         <td th:text="${user.birth}"></td>
                     </tr>
                 </tbody>
+            </table>
                 <td>
                     <button class="button">
                         <a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-outline-warning">
-                            <i class="fas fa-inquiryUser-edit"></i>へんこう</a>
+                            <i class="fas fa-inquiryUser-edit"></i>Change</a>
                     </button>
                 </td>
                 <td>
                     <form th:method="delete" th:action="@{/user/{id}(id=${user.id})}">
                         <button type="submit" class="button">
-                            <i class="fas fa-inquiryUser-edit"></i>たいかい</button>
+                            <i class="fas fa-inquiryUser-edit"></i>Withdrawal</button>
                     </form>
                 </td>
                 </tr>
-            </table>
+            
         </div>
 </body>
 </html>

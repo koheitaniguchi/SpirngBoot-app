@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master GYM</title>
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
 </head>
-
 <body>
     <div id="new" class="big-bg">
-        <h1>Question&Answer</h1>
+        <h1 class="title">Question&Answer</h1>
         <form th:action="@{/sec/new}" th:object="${inquiryUser}" method="post">
-            <label for="inquiry">Question</label><br>
-            <textarea name="form-control" rows="5" th:field="*{inquiry}"></textarea><br>
-
-            <input type="submit" value="ask" class="btn btn-primary btn-lg">
-            <input type="reset" value="cancel" class="btn btn-primary btn-lg">
-            <button>
+            <label class="label" for="inquiry">Question</label><br>
+            <textarea name="form-control" rows="10" cols="80" th:field="*{inquiry}"></textarea><br>
+            <input type="submit" value="ask" class="new">
+            <input type="reset" value="cancel" class="new">
+            <button class="new">
                 <a th:href="@{/sec/question}">back</a>
             </button>
         </form>
     </div>
 </body>
-
 </html>

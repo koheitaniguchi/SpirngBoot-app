@@ -11,7 +11,6 @@ body{
 }
 a {
     text-decoration: none;
-    margin: 40;
 }
 img {
     max-width: 100%;
@@ -34,23 +33,16 @@ img {
     font-weight: normal;
 }
 /* ボタン */
-.button,.button-1,.button-2 {
+.button {
     font-size: 1.375rem;
-    background: white;
-    color: black;
+    background: black;
+    color: #fff;
     border-radius: 5px;
     padding: 18px 32px;
 }
 .button:hover {
     background: grey;
 }
-.button-1:hover {
-    background: grey;
-}
-.button-2:hover {
-    background: grey;
-}
-
 /* HEADER
 ------------------------------- */
 .page-header {
@@ -58,10 +50,9 @@ img {
     justify-content: space-between;
     list-style: none;
     text-transform: uppercase;
-    font-size: 1.3rem;
 }
 .page-header a {
-    color: rgb(196, 38, 38);
+    color: black;
 }
 .page-header a:hover {
     color: gray;
@@ -72,13 +63,14 @@ img {
 }
 .main-nav {
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-transform: uppercase;
     margin-top: 34px;
+    margin-left: 60px;
     list-style: none;
 }
 .main-nav li {
-    margin-left: 36px;
+    margin-left: 38px;
 }
 .main-nav a {
     color: black;
@@ -89,7 +81,7 @@ img {
 /* HOME
 ------------------------------- */
 #home {
-    background-image: url(../images/weight-lifting-1284616_960_720.jpg);
+    background-image: url(../images/jogging-2343558_1280.webp);
     min-height: 100vh;
     background-size: cover;
     width: 100%;
@@ -99,40 +91,53 @@ img {
 }
 .home-content {
     text-align: center;
+    margin-top: 10%;
+}
+.home-content p {
+    font-size: 2.5rem;
+    margin: 10px 0 42px;
+}
+/* NEWS
+------------------------------- */
+#news {
+    background-image: url(../images/fitness-3448864_1280.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+.page-title {
+    text-align: center;
+    color: black;
+}
+#news .post {
+    text-align: center;
+}
+/* 記事部分 */
+.post {
+    position: relative;
+    padding-top: 4px;
+    text-align: center;
+    list-style: none;
+    margin-bottom: 10rem;
+}
+.post-title {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
 }
 h1 {
     color: black;
 }
-tbody {
-    border-width: thick;
-    border-style: solid;
+.p-1 ,.p-2,.p-3 {
+    margin: 5em;
+    font-size: 1.5em;
 }
-.content {
-    color:black;
-    font-size: 2.0rem;
-    text-decoration: underline;
-}
-.question {
-    margin: 2em auto;
-    padding: 1em;
-    width: 100%;
-    color: #606060;
-    background-color: #FAF0E6;
-    border: 2px solid #DEB887;
-    border-radius: 10px;
-}
-h2 {
-    color: rgb(196, 38, 38);
-    font-size: 4.5rem;
+.p-4{
     text-align: center;
-    margin-bottom: -1.5rem;
-    text-decoration: underline;
+    font-size: 2.5rem;
+    text-decoration: overline;
 }
-.list {
-    color: black;
-    text-decoration: underline;
-    font-size: 1.5rem;
-}
-a {
-    color: black;
+/* 未回答があるときの設定 */
+.notice {
+    color: red !important;
 }

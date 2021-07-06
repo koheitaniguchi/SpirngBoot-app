@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mster GYM</title>
-    <link rel="stylesheet" href="@{css/login.css}">
-
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
 </head>
-
 <body>
-    <div>
+    <div class="edit">
         <h2>ユーザー編集</h2>
-
         <form th:method="patch" th:action="@{/user/{id}(id=*{id})}" th:object="${newUser}" novalidate>
             <div>
                 <label for="username">UserName:</label>
@@ -27,7 +23,6 @@
                 <label for="email">E-mail：</label>
                 <input type="email" th:field="*{email}">
             </div>
-
             <div>
                 <label for="address">Address：</label>
                 <input type="text" th:field="*{address}">
@@ -41,10 +36,8 @@
                 <input type="hidden" th:field="*{admin}">
                 <input type="hidden" th:field="*{role}">
             </div>
-
-            <input type="submit" value="update">
+            <input class="date" type="submit" value="update">
         </form>
     </div>
 </body>
-
 </html>
